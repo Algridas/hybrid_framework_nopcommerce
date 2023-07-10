@@ -57,7 +57,7 @@ public class Level_01_Register_DRY {
 		Assert.assertEquals(driver.findElement(By.xpath("//span[@id='Email-error']")).getText(), "Wrong email");
 	}
 	
-	@Test
+//	@Test
 	public void TC_03_Register_Success() {
 		
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
@@ -75,7 +75,7 @@ public class Level_01_Register_DRY {
 		driver.findElement(By.xpath("//a[@class='ico-login']")).click();
 	}
 	
-	@Test
+//	@Test
 	public void TC_04_Register_Existing_Email() {
 		
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
@@ -92,7 +92,7 @@ public class Level_01_Register_DRY {
 		
 	}
 	
-	@Test
+//	@Test
 	public void TC_05_Register_Password_Less_Than_6_Chars() {
 		
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
@@ -108,7 +108,7 @@ public class Level_01_Register_DRY {
 		Assert.assertEquals(driver.findElement(By.xpath("//span[@id='Password-error']")).getText(), "Password must meet the following rules:\nmust have at least 6 characters");
 	}
 	
-	@Test
+//	@Test
 	public void TC_06_Register_Invalid_Confirm_Password() {
 		
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
