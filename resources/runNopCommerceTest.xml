@@ -3,7 +3,7 @@
 
   <test name="Run on Firefox">
     <classes>
-      <class name="com.nopcommerce.user.Level_02_ApplyBasePage_3"/>
+      <class name="com.nopcommerce.user.Level_03_Page_Object"/>
     </classes>
   </test> <!-- Test -->
   
