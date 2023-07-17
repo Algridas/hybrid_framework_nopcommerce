@@ -17,11 +17,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object{
+public class Level_03_Page_Object_01_Register{
+	//Declare
+	private WebDriver driver;
+	private String firstName, lastName, emailAddress, password;
+	
+	//Declare+init
+	private String projectPath = System.getProperty("user.dir");
+	private HomePageObject homePage ;
+	private RegisterPageObject registerPage;
+
+	
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
 		driver = new FirefoxDriver();
+		
+		homePage = new HomePageObject(driver);
+		registerPage = new RegisterPageObject(driver);
 		
 		firstName = "Automation";
 		lastName = "FC";
@@ -225,10 +238,5 @@ public class Level_03_Page_Object{
 		return rand.nextInt(9999);
 		
 	}
-	private String projectPath = System.getProperty("user.dir");
-	private WebDriver driver;
-	private String firstName, lastName, emailAddress, password;
-	private HomePageObject homePage = new HomePageObject();
-	private RegisterPageObject registerPage = new RegisterPageObject();
 
 }

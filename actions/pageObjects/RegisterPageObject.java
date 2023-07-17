@@ -3,12 +3,18 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+//import commons.BasePage;
 import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
 
 	private WebDriver driver;
+	
+	public RegisterPageObject(WebDriver driver) {
+		this.driver=driver;
+	}
+	
 	public void clickToRegisterButton() {
 		waitForAllElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
@@ -77,6 +83,12 @@ public class RegisterPageObject extends BasePage {
 	public void clickToLoginLink() {
 		waitForAllElementVisible(driver, RegisterPageUI.LOGIN_LINK);
 		clickToElement(driver, RegisterPageUI.LOGIN_LINK);
+		
+	}
+	
+	public void clickToLogoutLink() {
+		waitForAllElementVisible(driver, RegisterPageUI.LOGOUT_LINK);
+		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
 		
 	}
 
