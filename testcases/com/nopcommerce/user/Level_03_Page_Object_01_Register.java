@@ -33,16 +33,17 @@ public class Level_03_Page_Object_01_Register{
 		System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
 		driver = new FirefoxDriver();
 		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get("https://demo.nopcommerce.com/");
+		
 		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
 		
 		firstName = "Automation";
 		lastName = "FC";
 		password = "123456";
 		emailAddress = "afc" + generateFakeNumber() + "@gmail.vn";
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://demo.nopcommerce.com/");
+		
 	}
 
 	@Test
@@ -53,6 +54,9 @@ public class Level_03_Page_Object_01_Register{
 //		clickToElement(driver, "//a[@class='ico-register']");       
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
+		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
 		
 //		waitForAllElementClickable(driver, "//button[@class='button-1 register-next-step-button']");
 //		clickToElement(driver, "//button[@class='button-1 register-next-step-button']");
@@ -84,6 +88,9 @@ public class Level_03_Page_Object_01_Register{
 //		clickToElement(driver, "//a[@class='ico-register']");
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
+		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");	
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -117,7 +124,8 @@ public class Level_03_Page_Object_01_Register{
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
 		
-		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -144,8 +152,9 @@ public class Level_03_Page_Object_01_Register{
 		
 //		waitForAllElementClickable(driver, "//a[@class='ico-login']");
 //		clickToElement(driver, "//a[@class='ico-login']");
-		System.out.println("Register Page - Step 05:Click to Login link");
-		registerPage.clickToLoginLink();
+		System.out.println("Register Page - Step 05:Click to the logo");
+//		registerPage.clickToLoginLink();
+		registerPage.clickToTheLogo();
 		
 		
 	}
@@ -158,6 +167,8 @@ public class Level_03_Page_Object_01_Register{
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
 		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
 //		sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
@@ -190,6 +201,10 @@ public class Level_03_Page_Object_01_Register{
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
 		
+		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
+		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
 		registerPage.inputToLastnameTextbox(lastName);
@@ -210,6 +225,10 @@ public class Level_03_Page_Object_01_Register{
 		
 		System.out.println("Home Page - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
+		
+		
+		//Click Register link -> nhảy qua trang Register
+		registerPage = new RegisterPageObject(driver);
 		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);

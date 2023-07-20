@@ -16,7 +16,7 @@ public class RegisterPageUI {
 	public static final String LOGIN_LINK = "//a[@class='ico-login']";
 	public static final String LOGOUT_LINK = "//a[@class='ico-logout']";
 	public static final String EXISTING_EMAIL_ERROR_MESSAGE = "//div[contains(@class,'message-error')]//li";
-
+	public static final String LOGO_LINK = "//img[@alt='nopCommerce demo store']";
 	
 	
 }

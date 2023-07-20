@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.IFactoryAnnotation;
 
 import commons.BasePage;
 //import commons.BasePage;
@@ -85,7 +86,7 @@ public class RegisterPageObject extends BasePage {
 		clickToElement(driver, RegisterPageUI.LOGIN_LINK);
 		
 	}
-	
+	 
 	public void clickToLogoutLink() {
 		waitForAllElementVisible(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
@@ -95,6 +96,12 @@ public class RegisterPageObject extends BasePage {
 	public String getErrorExistingEmailMessage() {
 		waitForAllElementVisible(driver, RegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
+	}
+
+	public void clickToTheLogo() {
+		// TODO Auto-generated method stub
+		waitForAllElementVisible(driver, RegisterPageUI.LOGO_LINK);
+		clickToElement(driver, RegisterPageUI.LOGO_LINK);
 	}
 
 }
