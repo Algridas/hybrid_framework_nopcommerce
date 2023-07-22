@@ -35,8 +35,9 @@ public class LoginPageObject extends BasePage {
 		return getElementText(driver, LoginPageUI.UNSUCCESSFUL_ERROR_MESSAGE);
 	}
 
-	public void inputToPasswordTextbox(String string) {
-		// TODO Auto-generated method stub
+	public void inputToPasswordTextbox(String password) {
+		waitForAllElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
+		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 		
 	}
 
