@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -19,8 +20,9 @@ public class BaseTest {
 System.out.println("Run on"+ browserName);
 		
 		if(browserName.equals("firefox")) {
-//			System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
-			WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
+
+//			driver = WebDriverManager.firefoxdriver().create();
 			
 			driver = new FirefoxDriver();
 		}else if(browserName.equals("h_firefox")) {
@@ -32,8 +34,10 @@ System.out.println("Run on"+ browserName);
 			driver = new FirefoxDriver(options);
 			
 		}else if(browserName.equals("chrome")) {
-//			System.setProperty("webdriver.chrome.driver", projectPath +  "\\browserDrivers\\chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", projectPath +  "\\browserDrivers\\chromedriver.exe");
+
+//			driver = WebDriverManager.chromedriver().create();
+			
 			driver = new ChromeDriver();
 		}else if(browserName.equals("h_chrome")) {
 //			System.setProperty("webdriver.chrome.driver", projectPath +  "\\browserDrivers\\chromedriver.exe");
@@ -43,8 +47,10 @@ System.out.println("Run on"+ browserName);
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 		}else if(browserName.equals("edge")) {
-//			System.setProperty("webdriver.edge.driver", projectPath +  "\\browserDrivers\\msedgedriver.exe");
-			WebDriverManager.edgedriver().setup();
+			System.setProperty("webdriver.edge.driver", projectPath +  "\\browserDrivers\\msedgedriver.exe");
+			
+//			driver = WebDriverManager.edgedriver().create();
+			
 			driver = new EdgeDriver();
 		} else {
 			throw new RuntimeException("Browser name invalid.");
@@ -54,6 +60,12 @@ System.out.println("Run on"+ browserName);
 		driver.get("https://demo.nopcommerce.com/");
 		
 		return driver; 
+	}
+	
+	protected int generateFakeNumber() {
+		Random rand = new Random();
+		return rand.nextInt(9999);
+		
 	}
 
 }

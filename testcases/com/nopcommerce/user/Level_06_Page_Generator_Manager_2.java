@@ -3,6 +3,7 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
+import commons.BaseTest;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
@@ -21,7 +22,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object_02_Login{
+public class Level_06_Page_Generator_Manager_2 extends BaseTest{
 	//Declare
 	private WebDriver driver;
 	private String firstName, lastName, existingEmail, invalidEmail, notFoundEmail, validPassword, incorrectPassword;
@@ -35,27 +36,11 @@ public class Level_03_Page_Object_02_Login{
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		System.out.println("Run on"+ browserName);
 		
-		if(browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		}else if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", projectPath +  "\\browserDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}else if(browserName.equals("edge")) {
-			System.setProperty("webdriver.edge.driver", projectPath +  "\\browserDrivers\\msedgedriver.exe");
-			driver = new EdgeDriver();
-		} else {
-			throw new RuntimeException("Browser name invalid.");
-		}
-		
-		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://demo.nopcommerce.com/");
+		driver =getBrowserDriver(browserName);
 		
 		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		
 		firstName = "Automation";
 		lastName = "FC";
 		invalidEmail= "machete@machete@hiho";
@@ -67,6 +52,8 @@ public class Level_03_Page_Object_02_Login{
 		
 		System.out.println("Precondition - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
+		registerPage = new RegisterPageObject(driver);
+		
 		System.out.println("Precondition - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
 		registerPage.inputToLastnameTextbox(lastName);
@@ -199,10 +186,6 @@ public class Level_03_Page_Object_02_Login{
 		driver.close();
 	}
 	
-	public int generateFakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
-		
-	}
+
 
 }

@@ -3,8 +3,11 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
+import commons.BaseTest;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.MyAccountPageObject;
+import pageObjects.PageGeneratorManager;
 import pageObjects.RegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
@@ -21,7 +24,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object_02_Login{
+public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	//Declare
 	private WebDriver driver;
 	private String firstName, lastName, existingEmail, invalidEmail, notFoundEmail, validPassword, incorrectPassword;
@@ -31,31 +34,18 @@ public class Level_03_Page_Object_02_Login{
 	private HomePageObject homePage ;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
+	private MyAccountPageObject myAccountPage;
+	
 	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		System.out.println("Run on"+ browserName);
 		
-		if(browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", projectPath +  "\\browserDrivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		}else if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", projectPath +  "\\browserDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}else if(browserName.equals("edge")) {
-			System.setProperty("webdriver.edge.driver", projectPath +  "\\browserDrivers\\msedgedriver.exe");
-			driver = new EdgeDriver();
-		} else {
-			throw new RuntimeException("Browser name invalid.");
-		}
+		driver =getBrowserDriver(browserName);
 		
+		homePage = PageGeneratorManager.getHomePage(driver);
+//		homePage = new HomePageObject(driver);
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://demo.nopcommerce.com/");
-		
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
 		firstName = "Automation";
 		lastName = "FC";
 		invalidEmail= "machete@machete@hiho";
@@ -66,7 +56,9 @@ public class Level_03_Page_Object_02_Login{
 		
 		
 		System.out.println("Precondition - Step 01:Click to Register link");
-		homePage.clickToRegisterLink();
+		registerPage =homePage.clickToRegisterLink();
+		 
+		
 		System.out.println("Precondition - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
 		registerPage.inputToLastnameTextbox(lastName);
@@ -84,21 +76,18 @@ public class Level_03_Page_Object_02_Login{
 //		waitForAllElementClickable(driver, "//a[@class='ico-login']");
 //		clickToElement(driver, "//a[@class='ico-login']");
 		System.out.println("Precondition - Step 05:Click to the logo");
-		registerPage.clickToTheLogo();
+		homePage =registerPage.clickToTheLogo();
 		
 		//click Logo thì business sẽ ra trang Home
-		homePage = new HomePageObject(driver);
+//		 new HomePageObject(driver);
 	}
 
 	@Test
 	public void Login_01_Empty_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
 		//Từ trang Home, mình click qua trang Login
-		
-		loginPage = new LoginPageObject(driver);
-		
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.clickToLoginButton();
 		
@@ -112,11 +101,11 @@ public class Level_03_Page_Object_02_Login{
 	@Test
 	public void Login_02_Invalid_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
 		//Từ trang Home, mình click qua trang Login
 		
-		loginPage = new LoginPageObject(driver);
+//		 new LoginPageObject(driver);
 		
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.inputToEmailTextbox(invalidEmail);
@@ -129,9 +118,9 @@ public class Level_03_Page_Object_02_Login{
 	@Test
 	public void Login_03_Email_Not_found() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
-		loginPage = new LoginPageObject(driver);
+//		 new LoginPageObject(driver);
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		loginPage.clickToLoginButton();
@@ -142,9 +131,9 @@ public class Level_03_Page_Object_02_Login{
 	
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
-		loginPage = new LoginPageObject(driver);
+
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -159,9 +148,9 @@ public class Level_03_Page_Object_02_Login{
 	@Test
 	public void Login_05_Existing_Email_Incorrect_Password() {
 		
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
-		loginPage = new LoginPageObject(driver);
+//		 new LoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(incorrectPassword);
@@ -175,21 +164,24 @@ public class Level_03_Page_Object_02_Login{
 	@Test
 	public void Login_06_Valid_Email_Password() {
 		
-		homePage.clickToLoginLink();
+		loginPage =homePage.clickToLoginLink();
 		
-		loginPage = new LoginPageObject(driver);
+//		 new LoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(validPassword);
 
-		loginPage.clickToLoginButton();
+		homePage =loginPage.clickToLoginButton();
 		
 		//Login thành công -> HomePage
-		homePage = new HomePageObject(driver);
+//		 new HomePageObject(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplay());
 		
+		myAccountPage=homePage.clickToMyAccountLink();
 		
+		//myAccountPage
+		myAccountPage.clickToNewsLetterCheckbox();
 	}
 	
 
@@ -199,10 +191,6 @@ public class Level_03_Page_Object_02_Login{
 		driver.close();
 	}
 	
-	public int generateFakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
-		
-	}
+
 
 }

@@ -98,10 +98,13 @@ public class RegisterPageObject extends BasePage {
 		return getElementText(driver, RegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
 	}
 
-	public void clickToTheLogo() {
+	public HomePageObject clickToTheLogo() {
 		// TODO Auto-generated method stub
 		waitForAllElementVisible(driver, RegisterPageUI.LOGO_LINK);
 		clickToElement(driver, RegisterPageUI.LOGO_LINK);
+//		return new HomePageObject(driver);
+		
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 }
