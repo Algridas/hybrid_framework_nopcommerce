@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -29,15 +29,15 @@ public class Level_05_Page_Factory extends BaseTest{
 	
 	//Declare+init
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver =getBrowserDriver(browserName);
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		
 		firstName = "Automation";
@@ -51,7 +51,7 @@ public class Level_05_Page_Factory extends BaseTest{
 		
 		System.out.println("Precondition - Step 01:Click to Register link");
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Precondition - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -73,23 +73,23 @@ public class Level_05_Page_Factory extends BaseTest{
 		registerPage.clickToTheLogo();
 		
 		//click Logo thì business sẽ ra trang Home
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 //	@Test
 	public void Login_01_Empty_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
 		//Từ trang Home, mình click qua trang Login
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.clickToLoginButton();
 		
 		System.out.println("Login Page - Step 03:Verify error message displayed");
-		Assert.assertEquals(loginPage.getErrorMessageAtFirstnameTextbox(), "Please enter your email");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Please enter your email");
 
 		
 	}
@@ -98,26 +98,26 @@ public class Level_05_Page_Factory extends BaseTest{
 	@Test
 	public void Login_02_Invalid_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
 		//Từ trang Home, mình click qua trang Login
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.inputToEmailTextbox(invalidEmail);
 		loginPage.clickToLoginButton();
 		System.out.println("Login Page - Step 03:Verify error message displayed");
-		Assert.assertEquals(loginPage.getErrorMessageAtFirstnameTextbox(), "Wrong email");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Wrong email");
 	}
 	
 	
 	@Test
 	public void Login_03_Email_Not_found() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		loginPage.clickToLoginButton();
@@ -128,9 +128,9 @@ public class Level_05_Page_Factory extends BaseTest{
 	
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -145,9 +145,9 @@ public class Level_05_Page_Factory extends BaseTest{
 	@Test
 	public void Login_05_Existing_Email_Incorrect_Password() {
 		
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(incorrectPassword);
@@ -161,9 +161,9 @@ public class Level_05_Page_Factory extends BaseTest{
 	@Test
 	public void Login_06_Valid_Email_Password() {
 		
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(validPassword);
@@ -171,7 +171,7 @@ public class Level_05_Page_Factory extends BaseTest{
 		loginPage.clickToLoginButton();
 		
 		//Login thành công -> HomePage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplay());
 		

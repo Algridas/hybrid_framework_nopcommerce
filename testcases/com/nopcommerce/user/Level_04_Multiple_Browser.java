@@ -4,8 +4,8 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -30,15 +30,15 @@ public class Level_04_Multiple_Browser extends BaseTest{
 	
 	//Declare+init
 
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage;
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		
 		driver =getBrowserDriver(browserName);
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "Automation";
 		lastName = "FC";
@@ -58,7 +58,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		waitForAllElementClickable(driver, "//button[@class='button-1 register-next-step-button']");
 //		clickToElement(driver, "//button[@class='button-1 register-next-step-button']");
@@ -87,7 +87,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");	
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -122,7 +122,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -165,7 +165,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
 //		sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
@@ -200,7 +200,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -225,7 +225,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);

@@ -3,8 +3,8 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -24,8 +24,8 @@ public class Level_03_Page_Object_01_Register{
 	
 	//Declare+init
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage;
 
 	
 	@BeforeClass
@@ -36,7 +36,7 @@ public class Level_03_Page_Object_01_Register{
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "Automation";
 		lastName = "FC";
@@ -56,7 +56,7 @@ public class Level_03_Page_Object_01_Register{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		waitForAllElementClickable(driver, "//button[@class='button-1 register-next-step-button']");
 //		clickToElement(driver, "//button[@class='button-1 register-next-step-button']");
@@ -90,7 +90,7 @@ public class Level_03_Page_Object_01_Register{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");	
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -125,7 +125,7 @@ public class Level_03_Page_Object_01_Register{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
@@ -168,7 +168,7 @@ public class Level_03_Page_Object_01_Register{
 		homePage.clickToRegisterLink();
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 //		sendKeyToElement(driver, "//input[@id='FirstName']", "Automation");
 //		sendKeyToElement(driver, "//input[@id='LastName']", "FC");
 //		sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
@@ -203,7 +203,7 @@ public class Level_03_Page_Object_01_Register{
 		
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -228,7 +228,7 @@ public class Level_03_Page_Object_01_Register{
 		
 		
 		//Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Register Page - Step 02:Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);

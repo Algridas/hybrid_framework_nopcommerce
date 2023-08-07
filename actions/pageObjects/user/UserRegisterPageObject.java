@@ -1,18 +1,18 @@
-package pageObjects;
+package pageObjects.user;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.IFactoryAnnotation;
 
 import commons.BasePage;
-//import commons.BasePage;
-import pageUIs.HomePageUI;
-import pageUIs.RegisterPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.user.HomePageUI;
+import pageUIs.user.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class UserRegisterPageObject extends BasePage {
 
 	private WebDriver driver;
 	
-	public RegisterPageObject(WebDriver driver) {
+	public UserRegisterPageObject(WebDriver driver) {
 		this.driver=driver;
 	}
 	
@@ -98,13 +98,13 @@ public class RegisterPageObject extends BasePage {
 		return getElementText(driver, RegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
 	}
 
-	public HomePageObject clickToTheLogo() {
+	public UserHomePageObject clickToTheLogo() {
 		// TODO Auto-generated method stub
 		waitForAllElementVisible(driver, RegisterPageUI.LOGO_LINK);
 		clickToElement(driver, RegisterPageUI.LOGO_LINK);
 //		return new HomePageObject(driver);
 		
-		return PageGeneratorManager.getHomePage(driver);
+		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
 }

@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyAccountPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.user.UserCustomerInforPageObject;
+import pageObjects.user.UserHomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -31,10 +31,10 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	
 	//Declare+init
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private MyAccountPageObject myAccountPage;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInforPageObject myAccountPage;
 	
 	
 	@Parameters("browser")
@@ -43,7 +43,7 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 		
 		driver =getBrowserDriver(browserName);
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 //		homePage = new HomePageObject(driver);
 		
 		firstName = "Automation";
@@ -85,14 +85,14 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	@Test
 	public void Login_01_Empty_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 		//Từ trang Home, mình click qua trang Login
 		System.out.println("Login Page - Step 02:Click to Login button");
 		loginPage.clickToLoginButton();
 		
 		System.out.println("Login Page - Step 03:Verify error message displayed");
-		Assert.assertEquals(loginPage.getErrorMessageAtFirstnameTextbox(), "Please enter your email");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Please enter your email");
 
 		
 	}
@@ -101,7 +101,7 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	@Test
 	public void Login_02_Invalid_data() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 		//Từ trang Home, mình click qua trang Login
 		
@@ -111,14 +111,14 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 		loginPage.inputToEmailTextbox(invalidEmail);
 		loginPage.clickToLoginButton();
 		System.out.println("Login Page - Step 03:Verify error message displayed");
-		Assert.assertEquals(loginPage.getErrorMessageAtFirstnameTextbox(), "Wrong email");
+		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Wrong email");
 	}
 	
 	
 	@Test
 	public void Login_03_Email_Not_found() {
 		System.out.println("Home Page - Step 01:Click to Login link");
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 //		 new LoginPageObject(driver);
 		System.out.println("Login Page - Step 02:Click to Login button");
@@ -131,7 +131,7 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 
 		
@@ -148,7 +148,7 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	@Test
 	public void Login_05_Existing_Email_Incorrect_Password() {
 		
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 //		 new LoginPageObject(driver);
 		
@@ -164,7 +164,7 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 	@Test
 	public void Login_06_Valid_Email_Password() {
 		
-		loginPage =homePage.clickToLoginLink();
+		loginPage =homePage.openLoginPage();
 		
 //		 new LoginPageObject(driver);
 		
@@ -178,10 +178,9 @@ public class Level_06_Page_Generator_Manager_3 extends BaseTest{
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplay());
 		
-		myAccountPage=homePage.clickToMyAccountLink();
+		myAccountPage=homePage.openMyAccountPage();
 		
-		//myAccountPage
-		myAccountPage.clickToNewsLetterCheckbox();
+		
 	}
 	
 

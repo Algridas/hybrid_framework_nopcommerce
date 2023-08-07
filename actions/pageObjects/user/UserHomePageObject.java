@@ -1,33 +1,34 @@
-package pageObjects;
+package pageObjects.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.HomePageUI;
-import pageUIs.RegisterPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.user.HomePageUI;
+import pageUIs.user.RegisterPageUI;
 
-public class HomePageObject extends BasePage {
+public class UserHomePageObject extends BasePage {
 	//Biến global
 	private WebDriver driver;
 	
-   public HomePageObject(WebDriver driver) {
+   public UserHomePageObject(WebDriver driver) {
 		//Biến local
 		this.driver = driver;
 	}
 	
-	public RegisterPageObject clickToRegisterLink() {
+	public UserRegisterPageObject clickToRegisterLink() {
 		waitForAllElementClickable(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
 		//2
 //		return new RegisterPageObject(driver);
 		
         //3
-		return PageGeneratorManager.getRegisterPage(driver);
+		return PageGeneratorManager.getUserRegisterPage(driver);
 	}
-	public LoginPageObject clickToLoginLink() {
-		waitForAllElementVisible(driver, RegisterPageUI.LOGIN_LINK);
-		clickToElement(driver, RegisterPageUI.LOGIN_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
+	public UserLoginPageObject openLoginPage() {
+		waitForAllElementVisible(driver, HomePageUI.LOGIN_LINK);
+		clickToElement(driver, HomePageUI.LOGIN_LINK);
+		return PageGeneratorManager.getUserLoginPage(driver);
 		
 	}
 
@@ -39,10 +40,10 @@ public class HomePageObject extends BasePage {
 		
 	}
 
-	public MyAccountPageObject clickToMyAccountLink() {
+	public UserCustomerInforPageObject openMyAccountPage() {
 		waitForAllElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
-		return PageGeneratorManager.getMyAccountPage(driver);
+		return PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
 
 	
