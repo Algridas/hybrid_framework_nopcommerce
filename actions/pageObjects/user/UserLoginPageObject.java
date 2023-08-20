@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUIs.user.LoginPageUI;
 import pageUIs.user.RegisterPageUI;
 
@@ -17,7 +18,7 @@ public class UserLoginPageObject extends BasePage {
 
 
 
-
+	@Step("Enter to Email textbox with value is {0}")
 	public void inputToEmailTextbox(String emailAddress) {
 		waitForAllElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);
@@ -25,13 +26,14 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	
-
+	@Step("Enter to Password textbox with value is {0}")
 	public void inputToPasswordTextbox(String password) {
 		waitForAllElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 		
 	}
 	
+	@Step("Click to Login Button")
 	public UserHomePageObject clickToLoginButton() {
 		waitForAllElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);

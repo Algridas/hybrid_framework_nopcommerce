@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -69,6 +70,18 @@ public class BasePage {
 	
 	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
+	}
+	
+	public Set<Cookie> getAllCookies(WebDriver driver) {
+		return driver.manage().getCookies();
+	}
+	
+	public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+		for (Cookie cookie : cookies) {
+
+			driver.manage().addCookie(cookie);
+		}
+		sleepInSecond(3);
 	}
 	
 	public Alert waitForAlertPresence(WebDriver driver) {
@@ -264,6 +277,11 @@ public class BasePage {
 		return getWebElement(driver, xpathLocator).getAttribute(attributeName);
 	}
 	
+	public String getElementAttribute(WebDriver driver, String xpathLocator, String attributeName, String...dynamicValues) {
+		return getWebElement(driver, getDynamicXpath(xpathLocator,dynamicValues )).getAttribute(attributeName);
+	}
+	
+	
 	public String getCssValue(WebDriver driver, String xpathLocator, String propertyName) {
 		return getWebElement(driver, xpathLocator).getCssValue(propertyName);
 	}
@@ -429,6 +447,11 @@ public class BasePage {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, xpathLocator));
 	}
+	
+	public String getElementValueByJS(WebDriver driver, String xpathLocator) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		return (String) jsExecutor.executeScript("return $(document.evaluate(\""+ xpathLocator +"\", document, null, XPathResult.FIRST_ORDER_NODE_TYPE, null).singleNodeValue).val()");
+	}
 
 
 	public void removeAttributeInDOM(WebDriver driver, String xpathLocator, String attributeRemove) {
@@ -579,16 +602,86 @@ public class BasePage {
 		
 		}
 	
-	
+	//Pattern Object
 	public void openPageAtMyAccountByPageName(WebDriver driver, String pageName) {
 		waitForAllElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 		}
 	
+	/** 
+	 * Enter to dynamic Textbox by ID
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void inputToTextboxByID(WebDriver driver, String textboxID, String value) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendKeyToElement(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+	}
 	
 	
+	/** 
+	 * Click to dynamic Button by text
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByText(WebDriver driver, String buttonText) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+	}
 	
-	//switch role
+	
+	/** 
+	 * Select item in dropdown by Name attribute
+	 * 
+	 * @param driver
+	 * @param dropdownAttributeName
+	 * @param itemValue
+	 */
+	public void selectToDropwdownByName(WebDriver driver, String dropdownAttributeName, String itemValue) {
+		waitForAllElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
+		selectItemInDefaultDropdown(driver, BasePageNopCommerceUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownAttributeName);
+		
+	}
+	
+	/** 
+	 * Click to dynamic radio button by label name
+	 * @param driver
+	 * @param radioButtonLabelName
+	 */
+	
+	public void clickToRadioButtonByLabel(WebDriver driver, String radioButtonLabelName) {
+		waitForAllElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopCommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
+		
+	}
+	
+
+	/** 
+	 * Click to dynamic radio button by label name
+	 * @param driver
+	 * @param checkboxLabelName
+	 */
+	public void clickToCheckboxByLabel(WebDriver driver, String checkboxLabelName) {
+		waitForAllElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
+		
+	}
+	
+
+	/**
+	 * Get value in textbox by textboxID
+	 * 
+	 * @param driver
+	 * @param textboxID
+	 * @return
+	 */
+	public String getTextboxValueByID(WebDriver driver, String textboxID) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		return getElementAttribute(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
+	}
+	
+	//Level_8_switch_role
 	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
 		waitForAllElementVisible(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
 		clickToElement(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
@@ -599,6 +692,10 @@ public class BasePage {
 		clickToElement(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_ADMIN);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
+	
+
+
+	
 	
 	private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeOut = GlobalConstants.SHORT_TIMEOUT;
