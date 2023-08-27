@@ -1,9 +1,9 @@
-package pageObjects.wordpress.admin;
+package pageObjects.wordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.wordpress.admin.AdminPostAddNewPageUI;
+import pageUIs.wordpress.AdminPostAddNewPageUI;
 
 public class AdminPostAddNewPageObject extends BasePage{
 	WebDriver driver;

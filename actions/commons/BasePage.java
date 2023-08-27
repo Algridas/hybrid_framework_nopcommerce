@@ -26,8 +26,10 @@ import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.user.UserAddressPageObject;
 import pageObjects.user.UserCustomerInforPageObject;
 import pageObjects.user.UserHomePageObject;
+
 import pageObjects.user.UserMyProductReviewPageObject;
 import pageObjects.user.UserRewardPointPageObject;
+import pageObjects.wordpress.UserHomePO;
 import pageUIs.jQuery.upload.BasePageJQueryUI;
 import pageUIs.jQuery.upload.HomePageUI;
 import pageUIs.user.BasePageNopCommerceUI;
@@ -693,7 +695,10 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 	
-
+	public UserHomePO openEndUserSite(WebDriver driver, String endUserUrl) {
+		openPageUrl(driver, endUserUrl);
+		return pageObjects.wordpress.PageGeneratorManager.getUserHomePage(driver);
+	}
 
 	
 	

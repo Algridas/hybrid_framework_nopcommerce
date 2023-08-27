@@ -1,15 +1,33 @@
-[INFO ] [2023-08-23 12:16:05,647] Pre-Condition - Step 01: Open browser and admin Url
-[INFO ] [2023-08-23 12:16:14,096] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
-[INFO ] [2023-08-23 12:16:14,304] Pre-Condition - Step 03: Enter to Password textbox: automationfc@6768979906
-[INFO ] [2023-08-23 12:16:14,420] Pre-Condition - Step 04: Click to Login button
-[INFO ] [2023-08-23 12:16:18,502] Create_Post - Step 01: Click to 'Post' menu link
-[INFO ] [2023-08-23 12:16:20,722] Create_Post - Step 02: Get 'Search Posts' page Url'
-[INFO ] [2023-08-23 12:16:20,730] Create_Post - Step 03: Click to 'Add New' button
-[INFO ] [2023-08-23 12:16:24,168] Create_Post - Step 04: Enter to post title
-[INFO ] [2023-08-23 12:16:25,158] Create_Post - Step 05: Enter to body
-[INFO ] [2023-08-23 12:16:25,606] Create_Post - Step 06: Click to 'Publish' button
-[INFO ] [2023-08-23 12:16:25,752] Create_Post - Step 07: Verify 'Post published' message is displayed
-[INFO ] [2023-08-23 12:16:32,435]  -------------------------- PASSED -------------------------- 
-[INFO ] [2023-08-23 12:16:32,542] Search_Post - Step 01: Open 'Search Post' page
-[INFO ] [2023-08-23 12:16:36,206] OS name = windows 10
-[INFO ] [2023-08-23 12:16:36,207] Driver instance name = chromedriver: chrome on windows (55358dc48744d9a3eb0704a053788e7e)
+[INFO ] [2023-08-27 01:31:01,787] Pre-Condition - Step 01: Open browser and Admin site
+[INFO ] [2023-08-27 01:31:09,256] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[INFO ] [2023-08-27 01:31:09,481] Pre-Condition - Step 03: Enter to Password textbox: automationfc@6768979906
+[INFO ] [2023-08-27 01:31:09,619] Pre-Condition - Step 04: Click to Login button
+[INFO ] [2023-08-27 01:31:16,502] Create_Post - Step 01: Click to 'Post' menu link
+[INFO ] [2023-08-27 01:31:20,793] Create_Post - Step 02: Get 'Search Posts' page Url'
+[INFO ] [2023-08-27 01:31:20,801] Create_Post - Step 03: Click to 'Add New' button
+[INFO ] [2023-08-27 01:31:26,664] Create_Post - Step 04: Enter to post title
+[INFO ] [2023-08-27 01:31:27,445] Create_Post - Step 05: Enter to body
+[INFO ] [2023-08-27 01:31:27,887] Create_Post - Step 06: Click to 'Publish' button
+[INFO ] [2023-08-27 01:31:28,113] Create_Post - Step 07: Verify 'Post published' message is displayed
+[INFO ] [2023-08-27 01:31:45,832]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:31:46,045] Search_Post - Step 01: Open 'Search Post' page
+[INFO ] [2023-08-27 01:31:50,957] Search_Post - Step 02: Enter to Search textbox
+[INFO ] [2023-08-27 01:31:51,092] Search_Post - Step 03: Click to 'Search Posts' button
+[INFO ] [2023-08-27 01:31:58,448] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 1929'
+[INFO ] [2023-08-27 01:31:58,545]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:31:58,545] Search_Post - Step 05: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-27 01:31:58,598]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:31:58,598] Search_Post - Step 06: Open End User site
+[INFO ] [2023-08-27 01:32:02,254] Search_Post - Step 07: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-27 01:32:02,301]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:02,346]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:02,395]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:02,438]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:02,438] Search_Post - Step 08: Click to Post title
+[INFO ] [2023-08-27 01:32:05,529] Search_Post - Step 09: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-27 01:32:05,577]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:05,620]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:05,670]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:05,710]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-27 01:32:05,730] OS name = windows 10
+[INFO ] [2023-08-27 01:32:05,730] Driver instance name = chromedriver: chrome on windows (ac62e5899a7629210d4f33b5e4a03e9e)

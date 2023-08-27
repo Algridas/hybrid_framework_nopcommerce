@@ -1,4 +1,4 @@
-package pageObjects.wordpress.admin;
+package pageObjects.wordpress;
 
 import org.openqa.selenium.WebDriver;
 
@@ -20,5 +20,13 @@ public class PageGeneratorManager {
 	
 	public static AdminPostAddNewPageObject getAdminPostAddNewPage(WebDriver driver) {
 		return new AdminPostAddNewPageObject(driver);
+	}
+	
+	public static UserHomePO getUserHomePage(WebDriver driver) {
+		return new UserHomePO(driver);
+	}
+	
+	public static UserPostDetailPageObject getUserPostDetailPage(WebDriver driver) {
+		return new UserPostDetailPageObject(driver);
 	}
 }
