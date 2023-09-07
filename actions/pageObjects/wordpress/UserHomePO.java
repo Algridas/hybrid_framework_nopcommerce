@@ -40,4 +40,25 @@ public class UserHomePO extends BasePage {
 		return PageGeneratorManager.getUserPostDetailPage(driver);
 	}
 
+
+
+	public boolean isPostInforUndisplayedWithPostTitle(String editPostTitle) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	public void enterToSearchTextbox(String editPostTitle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	public UserSearchPostPO clickToSearchButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

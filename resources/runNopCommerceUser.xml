@@ -21,7 +21,7 @@
     <classes>
       <!-- Trigger Common Register run first -->
      <!-- <class name="com.nopcommerce.common.Common_01_Register_Cookie"/>-->
-      <class name="com.nopcommerce.user.Level_15_Allure"/>
+      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
     </classes>
   </test> 
   <!-- 

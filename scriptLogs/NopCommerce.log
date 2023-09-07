@@ -760,3 +760,203 @@
 [INFO ] [2023-08-27 01:32:05,710]  -------------------------- PASSED -------------------------- 
 [INFO ] [2023-08-27 01:32:05,730] OS name = windows 10
 [INFO ] [2023-08-27 01:32:05,730] Driver instance name = chromedriver: chrome on windows (ac62e5899a7629210d4f33b5e4a03e9e)
+[INFO ] [2023-08-28 07:00:41,253] Pre-Condition - Step 01: Open browser and Admin site
+[INFO ] [2023-08-28 07:00:55,302] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[INFO ] [2023-08-28 07:00:55,519] Pre-Condition - Step 03: Enter to Password textbox: automationfc@6768979906
+[INFO ] [2023-08-28 07:00:55,651] Pre-Condition - Step 04: Click to Login button
+[INFO ] [2023-08-28 07:01:05,110] Create_Post - Step 01: Click to 'Post' menu link
+[INFO ] [2023-08-28 07:01:11,739] Create_Post - Step 02: Get 'Search Posts' page Url'
+[INFO ] [2023-08-28 07:01:11,751] Create_Post - Step 03: Click to 'Add New' button
+[INFO ] [2023-08-28 07:01:19,177] Create_Post - Step 04: Enter to post title
+[INFO ] [2023-08-28 07:01:20,075] Create_Post - Step 05: Enter to body
+[INFO ] [2023-08-28 07:01:20,502] Create_Post - Step 06: Click to 'Publish' button
+[INFO ] [2023-08-28 07:01:20,641] Create_Post - Step 07: Verify 'Post published' message is displayed
+[INFO ] [2023-08-28 07:01:29,144]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:29,277] Search_Post - Step 01: Open 'Search Post' page
+[INFO ] [2023-08-28 07:01:34,379] Search_Post - Step 02: Enter to Search textbox
+[INFO ] [2023-08-28 07:01:34,556] Search_Post - Step 03: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:01:43,660] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 4281'
+[INFO ] [2023-08-28 07:01:43,742]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:43,742] Search_Post - Step 05: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 07:01:43,809]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:43,809] Search_Post - Step 06: Open End User site
+[INFO ] [2023-08-28 07:01:48,941] Search_Post - Step 07: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 07:01:49,002]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:49,053]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:49,109]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:49,168]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:49,168] Search_Post - Step 08: Click to Post title
+[INFO ] [2023-08-28 07:01:52,801] Search_Post - Step 09: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 07:01:52,867]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:52,926]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:52,978]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:53,032]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:01:53,045] Edit_Post - Step 01: Open Admin site
+[INFO ] [2023-08-28 07:01:57,031] Edit_Post - Step 02: Click to 'Posts' menu link
+[INFO ] [2023-08-28 07:02:01,411] Edit_Post - Step 03: Enter to Search textbox
+[INFO ] [2023-08-28 07:02:01,555] Edit_Post - Step 04: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:02:09,696] Edit_Post - Step 05: Click to Post title link and navigate to Edit Post page
+[INFO ] [2023-08-28 07:02:15,759] Edit_Post - Step 06: Enter to post title
+[INFO ] [2023-08-28 07:02:16,482] Edit_Post - Step 07: Enter to body
+[INFO ] [2023-08-28 07:02:16,783] Edit_Post - Step 08: Click to 'Update' button
+[INFO ] [2023-08-28 07:02:16,925] Edit_Post - Step 09: Verify 'Post updated' message is displayed
+[INFO ] [2023-08-28 07:02:23,995]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:23,995] Edit_Post - Step 10: Open 'Search Post' page
+[INFO ] [2023-08-28 07:02:29,161] Edit_Post - Step 11: Enter to Search textbox
+[INFO ] [2023-08-28 07:02:29,326] Edit_Post - Step 12: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:02:37,610] Edit_Post - Step 13: Verify Search table contains 'Edit Title4281'
+[INFO ] [2023-08-28 07:02:37,693]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:37,693] Edit_Post - Step 14: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 07:02:37,769]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:37,769] Edit_Post - Step 15: Open End User site
+[INFO ] [2023-08-28 07:02:42,476] Edit_Post - Step 16: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 07:02:42,531]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:42,578]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:42,625]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:42,675]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:42,675] Edit_Post - Step 17: Click to Post title
+[INFO ] [2023-08-28 07:02:46,956] Edit_Post - Step 18: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 07:02:47,002]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:47,049]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:47,093]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:47,142]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:02:47,160] OS name = windows 10
+[INFO ] [2023-08-28 07:02:47,161] Driver instance name = chromedriver: chrome on windows (f22dfab9f9d1ffc43e1209e916966809)
+[INFO ] [2023-08-28 07:04:59,663] Pre-Condition - Step 01: Open browser and Admin site
+[INFO ] [2023-08-28 07:05:10,100] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[INFO ] [2023-08-28 07:05:10,328] Pre-Condition - Step 03: Enter to Password textbox: automationfc@6768979906
+[INFO ] [2023-08-28 07:05:10,452] Pre-Condition - Step 04: Click to Login button
+[INFO ] [2023-08-28 07:05:18,772] Create_Post - Step 01: Click to 'Post' menu link
+[INFO ] [2023-08-28 07:05:23,693] Create_Post - Step 02: Get 'Search Posts' page Url'
+[INFO ] [2023-08-28 07:05:23,707] Create_Post - Step 03: Click to 'Add New' button
+[INFO ] [2023-08-28 07:05:29,959] Create_Post - Step 04: Enter to post title
+[INFO ] [2023-08-28 07:05:30,831] Create_Post - Step 05: Enter to body
+[INFO ] [2023-08-28 07:05:31,475] Create_Post - Step 06: Click to 'Publish' button
+[INFO ] [2023-08-28 07:05:31,714] Create_Post - Step 07: Verify 'Post published' message is displayed
+[INFO ] [2023-08-28 07:05:42,347]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:05:42,483] Search_Post - Step 01: Open 'Search Post' page
+[INFO ] [2023-08-28 07:05:47,871] Search_Post - Step 02: Enter to Search textbox
+[INFO ] [2023-08-28 07:05:48,014] Search_Post - Step 03: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:05:55,620] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 8376'
+[INFO ] [2023-08-28 07:05:55,703]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:05:55,703] Search_Post - Step 05: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 07:05:55,789]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:05:55,789] Search_Post - Step 06: Open End User site
+[INFO ] [2023-08-28 07:05:59,903] Search_Post - Step 07: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 07:05:59,955]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:00,005]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:00,064]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:00,113]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:00,113] Search_Post - Step 08: Click to Post title
+[INFO ] [2023-08-28 07:06:04,195] Search_Post - Step 09: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 07:06:04,249]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:04,311]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:04,383]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:04,443]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:04,457] Edit_Post - Step 01: Open Admin site
+[INFO ] [2023-08-28 07:06:08,574] Edit_Post - Step 02: Click to 'Posts' menu link
+[INFO ] [2023-08-28 07:06:12,948] Edit_Post - Step 03: Enter to Search textbox
+[INFO ] [2023-08-28 07:06:13,100] Edit_Post - Step 04: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:06:20,926] Edit_Post - Step 05: Click to Post title link and navigate to Edit Post page
+[INFO ] [2023-08-28 07:06:27,229] Edit_Post - Step 06: Enter to post title
+[INFO ] [2023-08-28 07:06:28,008] Edit_Post - Step 07: Enter to body
+[INFO ] [2023-08-28 07:06:28,294] Edit_Post - Step 08: Click to 'Update' button
+[INFO ] [2023-08-28 07:06:28,436] Edit_Post - Step 09: Verify 'Post updated' message is displayed
+[INFO ] [2023-08-28 07:06:35,912]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:35,912] Edit_Post - Step 10: Open 'Search Post' page
+[INFO ] [2023-08-28 07:06:40,502] Edit_Post - Step 11: Enter to Search textbox
+[INFO ] [2023-08-28 07:06:40,640] Edit_Post - Step 12: Click to 'Search Posts' button
+[INFO ] [2023-08-28 07:06:48,430] Edit_Post - Step 13: Verify Search table contains 'Edit Title8376'
+[INFO ] [2023-08-28 07:06:48,492]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:48,493] Edit_Post - Step 14: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 07:06:48,563]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:48,563] Edit_Post - Step 15: Open End User site
+[INFO ] [2023-08-28 07:06:52,422] Edit_Post - Step 16: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 07:06:52,464]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:52,508]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:52,556]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:52,597]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:52,597] Edit_Post - Step 17: Click to Post title
+[INFO ] [2023-08-28 07:06:56,243] Edit_Post - Step 18: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 07:06:56,310]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:56,373]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:56,434]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:56,502]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 07:06:56,541] OS name = windows 10
+[INFO ] [2023-08-28 07:06:56,541] Driver instance name = chromedriver: chrome on windows (5541abdf7fd2dbd8e2b3b6b3b3e4d4eb)
+[INFO ] [2023-08-28 10:56:03,606] Pre-Condition - Step 01: Open browser and Admin site
+[INFO ] [2023-08-28 10:56:21,738] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[INFO ] [2023-08-28 10:56:22,107] Pre-Condition - Step 03: Enter to Password textbox: automationfc@6768979906
+[INFO ] [2023-08-28 10:56:22,361] Pre-Condition - Step 04: Click to Login button
+[INFO ] [2023-08-28 10:56:35,954] Create_Post - Step 01: Click to 'Post' menu link
+[INFO ] [2023-08-28 10:56:44,614] Create_Post - Step 02: Get 'Search Posts' page Url'
+[INFO ] [2023-08-28 10:56:44,628] Create_Post - Step 03: Click to 'Add New' button
+[INFO ] [2023-08-28 10:56:55,370] Create_Post - Step 04: Enter to post title
+[INFO ] [2023-08-28 10:56:57,178] Create_Post - Step 05: Enter to body
+[INFO ] [2023-08-28 10:56:57,747] Create_Post - Step 06: Click to 'Publish' button
+[INFO ] [2023-08-28 10:56:57,964] Create_Post - Step 07: Verify 'Post published' message is displayed
+[INFO ] [2023-08-28 10:57:07,171]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:07,292] Search_Post - Step 01: Open 'Search Post' page
+[INFO ] [2023-08-28 10:57:13,497] Search_Post - Step 02: Enter to Search textbox
+[INFO ] [2023-08-28 10:57:13,812] Search_Post - Step 03: Click to 'Search Posts' button
+[INFO ] [2023-08-28 10:57:22,715] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 4713'
+[INFO ] [2023-08-28 10:57:22,803]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:22,803] Search_Post - Step 05: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 10:57:22,877]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:22,877] Search_Post - Step 06: Open End User site
+[INFO ] [2023-08-28 10:57:27,159] Search_Post - Step 07: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 10:57:27,228]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:27,286]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:27,343]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:27,402]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:27,402] Search_Post - Step 08: Click to Post title
+[INFO ] [2023-08-28 10:57:31,304] Search_Post - Step 09: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 10:57:31,362]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:31,420]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:31,478]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:31,539]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:57:31,552] Edit_Post - Step 01: Open Admin site
+[INFO ] [2023-08-28 10:57:36,582] Edit_Post - Step 02: Click to 'Posts' menu link
+[INFO ] [2023-08-28 10:57:42,375] Edit_Post - Step 03: Enter to Search textbox
+[INFO ] [2023-08-28 10:57:42,556] Edit_Post - Step 04: Click to 'Search Posts' button
+[INFO ] [2023-08-28 10:57:50,439] Edit_Post - Step 05: Click to Post title link and navigate to Edit Post page
+[INFO ] [2023-08-28 10:57:57,090] Edit_Post - Step 06: Enter to post title
+[INFO ] [2023-08-28 10:57:57,993] Edit_Post - Step 07: Enter to body
+[INFO ] [2023-08-28 10:57:58,390] Edit_Post - Step 08: Click to 'Update' button
+[INFO ] [2023-08-28 10:57:58,576] Edit_Post - Step 09: Verify 'Post updated' message is displayed
+[INFO ] [2023-08-28 10:58:05,927]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:05,927] Edit_Post - Step 10: Open 'Search Post' page
+[INFO ] [2023-08-28 10:58:11,714] Edit_Post - Step 11: Enter to Search textbox
+[INFO ] [2023-08-28 10:58:12,353] Edit_Post - Step 12: Click to 'Search Posts' button
+[INFO ] [2023-08-28 10:58:20,726] Edit_Post - Step 13: Verify Search table contains 'Edit Title4713'
+[INFO ] [2023-08-28 10:58:20,802]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:20,802] Edit_Post - Step 14: Verify Search table contains 'automationfc'
+[INFO ] [2023-08-28 10:58:20,873]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:20,873] Edit_Post - Step 15: Open End User site
+[INFO ] [2023-08-28 10:58:24,978] Edit_Post - Step 16: Verify Post infor displayed at Home Page
+[INFO ] [2023-08-28 10:58:25,035]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:25,094]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:25,138]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:25,198]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:25,198] Edit_Post - Step 17: Click to Post title
+[INFO ] [2023-08-28 10:58:28,384] Edit_Post - Step 18: Verify Post infor displayed at Post detail Page
+[INFO ] [2023-08-28 10:58:28,453]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:28,509]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:28,558]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:28,612]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-08-28 10:58:28,631] Delete_Post - Step 01: Open Admin site
+[INFO ] [2023-08-28 10:58:33,630] Delete_Post - Step 02: Click to 'Posts' menu link
+[INFO ] [2023-08-28 10:58:38,078] Delete_Post - Step 03: Enter to Search textbox
+[INFO ] [2023-08-28 10:58:38,254] Delete_Post - Step 04: Click to 'Search Posts' button
+[INFO ] [2023-08-28 10:58:47,510] Delete_Post - Step 05: Select post detail checkbox
+[INFO ] [2023-08-28 10:58:47,511] Delete_Post - Step 06: Select 'Move to Trash' item in dropdown
+[INFO ] [2023-08-28 10:58:47,511] Delete_Post - Step 07: Click to 'Apply' button
+[INFO ] [2023-08-28 10:58:47,511] Delete_Post - Step 08: Verify '1 post moved to the Trash' message is displayed
+[INFO ] [2023-08-28 10:58:47,511] Delete_Post - Step 09: Enter to Search textbox
+[INFO ] [2023-08-28 10:58:47,661] Delete_Post - Step 10: Click to 'Search Posts' button
+[INFO ] [2023-08-28 10:58:55,977] Delete_Post - Step 11: Verify 'No posts found.' message is displayed
+[INFO ] [2023-08-28 10:58:55,977] Delete_Post - Step 12: Open End User site
+[INFO ] [2023-08-28 10:58:59,853] Delete_Post - Step 13: Verify Post title undisplayed at Home Page
+[INFO ] [2023-08-28 10:58:59,853] Delete_Post - Step 14: Enter to Search textbox
+[INFO ] [2023-08-28 10:59:30,009] OS name = windows 10
+[INFO ] [2023-08-28 10:59:30,009] Driver instance name = chromedriver: chrome on windows (127a8b6b29436b33471be7e15247c095)
